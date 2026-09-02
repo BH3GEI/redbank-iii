@@ -42,7 +42,7 @@ const pathWithoutLocale =
       <span class="logo-mark">◉</span>
       <span class="logo-text">REDBANK <em>III</em></span>
     </a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <button class="nav-toggle" id="nav-toggle" aria-label={t(lang, 'nav.menu')} aria-controls="nav-links" aria-expanded="false">☰</button>
     <div class="nav-links" id="nav-links">
       <a href="#mission">{t(lang, 'nav.mission')}</a>
       <a href="#design">{t(lang, 'nav.design')}</a>
@@ -79,7 +79,7 @@ const pathWithoutLocale =
         <h4>{t(lang, 'nav.plans')}</h4>
         <a href="#plans">{t(lang, 'nav.plans')}</a>
         <a href="#array">{t(lang, 'nav.array')}</a>
-        <a href="#bom-main">BOM</a>
+        <a href={lang === 'zh' ? '#bom-main' : '#bom-b'}>BOM</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
@@ -118,10 +118,12 @@ const pathWithoutLocale =
     const open = navLinks?.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-  navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle?.setAttribute('aria-expanded', 'false');
-  }));
+  if (navLinks) {
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle?.setAttribute('aria-expanded', 'false');
+    }));
+  }
 
   // scroll fade-in
   const io = new IntersectionObserver((entries) => {

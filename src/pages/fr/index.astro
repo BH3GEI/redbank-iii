@@ -222,46 +222,23 @@ const imgBase = base.endsWith('/') ? base.slice(0, -1) : base;
   </div>
 </section>
 
-<!-- ============ CONCEPT ART ============ -->
-<section class="section section-dark" id="concept">
+<!-- ============ SIMULATION REPLAY ============ -->
+<section class="section section-dark" id="sim">
   <div class="container">
-    <div class="section-eyebrow">概念图 · CONCEPT ART</div>
-    <h2 class="section-title">{t(lang, 'concept.title')}</h2>
-    <p class="section-sub">{t(lang, 'concept.sub')}</p>
-    <div class="science-grid">
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/unit.jpg`} alt="Redbank III single unit concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.unit')}</h3>
-          <p>{t(lang, 'concept.unit.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/unit-detail.jpg`} alt="Redbank III unit detail concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.detail')}</h3>
-          <p>{t(lang, 'concept.detail.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/array.jpg`} alt="Redbank III 32-unit array concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.array')}</h3>
-          <p>{t(lang, 'concept.array.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-      <div class="science-card">
-        <img src={`${imgBase}/images/concept/radar-peak.jpg`} alt="Red Bank (红岸) homage concept" loading="lazy">
-        <div class="science-card-overlay">
-          <h3>{t(lang, 'concept.radar')}</h3>
-          <p>{t(lang, 'concept.radar.desc')}</p>
-          <div class="credit">Concept render · gpt-image-2</div>
-        </div>
-      </div>
-    </div>
+    <div class="section-eyebrow">SIMULATION · 仿真</div>
+    <h2 class="section-title">L'ordonnanceur tourne déjà —<br>regardez ses rejeux de simulation</h2>
+    <p class="section-sub">
+      Le réseau n'est pas encore construit, mais son logiciel a pris de l'avance : ciel, flux d'alertes, stations, ordonnancement, agents et pannes
+      sont modélisés en une <strong>simulation déterministe</strong> — même (graine, campagne), rejeu identique à l'octet près.
+      Le rejeu ci-dessous n'est pas une animation : c'est le flux d'événements calculé seconde par seconde par le noyau de simulation.
+    </p>
+    <a href="https://redbank-twin.liyao.space/demo-agent-ep.html" class="sim-poster">
+      <img src={`${imgBase}/images/sim/ep-replay-poster.jpg`} alt="Rejeu de simulation d'une campagne d'alerte EP : globe des stations, carte du ciel, flux d'événements, courbe de lumière" loading="lazy">
+    </a>
+    <p class="bom-note" style="margin-top:20px">
+      Quatre panneaux : <strong>globe</strong> (état des stations) · <strong>carte du ciel</strong> (où pointent les télescopes) · <strong>flux d'événements</strong> · <strong>courbe de lumière</strong>.
+      <a href="https://redbank-twin.liyao.space/" style="color:var(--accent)">Ouvrir tous les rejeux ↗</a>
+    </p>
   </div>
 </section>
 
